@@ -1,58 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Hrafiei's Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-        }
-        section {
-            margin: 20px;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohammad H. Rafiei, Ph.D.</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #343a40;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 0.3rem;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #343a40;
+    }
+    .summary {
+      flex: 1;
+    }
+    h2 {
+      color: #212529;
+      border-bottom: 2px solid #dee2e6;
+      padding-bottom: 0.3rem;
+      margin-top: 2rem;
+    }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skills div {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .projects img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #343a40;
+      color: white;
+      margin-top: 3rem;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
 
-    <section>
-        <h2>About Me</h2>
-        <p>Hello! I'm Mohammad Hrafiei, a passionate developer...</p>
+<header>
+  <h1>Mohammad H. Rafiei, Ph.D.</h1>
+  <p>ML Engineer | AI Scientist | R&D Leader</p>
+  <p>Atlanta, GA | <a href="mailto:rafiei.ac@gmail.com">rafiei.ac@gmail.com</a> | <a href="https://linkedin.com/in/mhrafiei" target="_blank">LinkedIn</a> | <a href="https://mhrafiei.github.io" target="_blank">Portfolio</a></p>
+</header>
 
-        <h2>Projects</h2>
-        <!-- List your projects here -->
-        <p>Project 1: Description</p>
-        <p>Project 2: Description</p>
-        <!-- ... -->
+<div class="container">
 
-        <h2>Contact</h2>
-        <p>Email: your-email@example.com</p>
-        <!-- Add more contact details if you wish -->
-    </section>
+  <section class="profile">
+    <img src="your-headshot.jpg" alt="Mohammad Rafiei Headshot" />
+    <div class="summary">
+      <h2>Professional Summary</h2>
+      <p>15+ years in ML/AI, including optimization, computer vision, NLP, signal processing, and LLMs. Author of 23+ peer-reviewed papers and creator of 48+ ML/AI GitHub libraries. Inventor of Neural Dynamic Classifier and privacy-preserving MLaaS (MOFHEI). Passionate about building responsible and scalable AI systems.</p>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2023 Mohammad Hrafiei</p>
-    </footer>
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <div><strong>Languages:</strong> Python, Shell, MATLAB, SQL, HTML, JavaScript</div>
+      <div><strong>Frameworks:</strong> TensorFlow, PyTorch, Keras, HuggingFace, Flask</div>
+      <div><strong>Domains:</strong> CV, NLP, Signal Processing, GANs, Diffusion, EEG/fMRI</div>
+      <div><strong>Tools:</strong> GitHub, Docker, Kubernetes, Colab, AWS, GCP</div>
+      <div><strong>Concepts:</strong> SSL, Optimization, MLOps, Prompt Engineering, HE</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Featured Projects & Papers</h2>
+    <div class="projects">
+      <a href="https://self-supervised.com" target="_blank"><img src="self-supervised-thumbnail.jpg" alt="Self-Supervised Learning Course" /></a>
+      <a href="https://aiwhittler.com" target="_blank"><img src="ai-whittler-thumbnail.jpg" alt="AI Whittler Startup" /></a>
+      <a href="https://www.rxgames.com" target="_blank"><img src="rxgames-thumbnail.jpg" alt="Stroke/MS Rehab Project" /></a>
+      <a href="https://scholar.google.com" target="_blank"><img src="paper-summary-thumbnail.jpg" alt="Google Scholar Publications" /></a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 Mohammad H. Rafiei. Built with 💻 and 🧠.</p>
+</footer>
+
 </body>
 </html>
