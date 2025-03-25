@@ -1,90 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohammad H. Rafiei, Ph.D.</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Basic Reset */
+    * {
       margin: 0;
       padding: 0;
-      background: #f8f9fa;
-      color: #333;
+      box-sizing: border-box;
     }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #f7f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* Header & Navigation */
     header {
-      background: #343a40;
-      color: white;
-      padding: 2rem;
+      background-color: #282c34;
+      padding: 1rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
     header h1 {
-      margin-bottom: 0.3rem;
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
+    nav {
+      margin: 1rem 0;
+    }
+    nav a {
+      color: #61dafb;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    /* Main Container */
     .container {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-    .profile {
+    /* Section Titles */
+    h2.section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #444;
+      border-left: 5px solid #282c34;
+      padding-left: 0.5rem;
+    }
+    /* ABOUT SECTION */
+    .about {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       align-items: center;
+      margin-bottom: 2rem;
     }
-    .profile img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
+    .about img {
+      width: 200px;
+      height: 200px;
       object-fit: cover;
-      border: 4px solid #343a40;
+      border-radius: 50%;
+      border: 4px solid #282c34;
     }
-    .summary {
+    .about-text {
       flex: 1;
+      min-width: 280px;
     }
-    h2 {
-      color: #212529;
-      border-bottom: 2px solid #dee2e6;
-      padding-bottom: 0.3rem;
-      margin-top: 2rem;
+    .about-text p {
+      margin-bottom: 1rem;
     }
-    .skills {
+    /* PROFESSIONAL SUMMARY SECTION */
+    .summary {
+      margin-bottom: 2rem;
+    }
+    .summary p {
+      margin-bottom: 1rem;
+    }
+    .highlight {
+      font-weight: bold;
+      background: #f0f0f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+    }
+    /* TECHNICAL SKILLS SECTION */
+    .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
-    .skills div {
-      background: white;
+    .skill-card {
+      background: #fff;
       padding: 1rem;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
+    .skill-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      color: #282c34;
+    }
+    .skill-card ul {
+      list-style: square inside;
+    }
+    /* EXPERIENCE SECTION */
+    .experience {
+      margin-bottom: 2rem;
+    }
+    .experience-item {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .experience-item h3 {
+      margin-bottom: 0.3rem;
+      color: #282c34;
+    }
+    .experience-item p {
+      margin-bottom: 0.3rem;
+    }
+    .experience-item ul {
+      list-style: disc inside;
+      margin-left: 1rem;
+    }
+    /* PUBLICATIONS */
+    .publications {
+      margin-bottom: 2rem;
+    }
+    .pub-list {
+      list-style: disc inside;
+      margin-left: 1rem;
+    }
+    /* EDUCATION SECTION */
+    .education {
+      margin-bottom: 2rem;
+    }
+    .education-item {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .education-item h3 {
+      margin-bottom: 0.3rem;
+      color: #282c34;
+    }
+    /* PROJECTS SECTION */
     .projects {
+      margin-bottom: 2rem;
+    }
+    .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .project-item {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .project-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+    /* HOBBIES SECTION */
+    .hobbies {
+      margin-bottom: 2rem;
+    }
+    .hobbies-grid {
+      display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       margin-top: 1rem;
     }
-    .projects img {
+    .hobby-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      flex: 1 1 280px;
+      text-align: center;
+    }
+    .hobby-card img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 8px;
       height: 180px;
       object-fit: cover;
+      margin-bottom: 0.5rem;
     }
+    /* FOOTER */
     footer {
-      text-align: center;
-      padding: 2rem;
-      background: #343a40;
+      background-color: #282c34;
       color: white;
-      margin-top: 3rem;
+      text-align: center;
+      padding: 2rem 1rem;
     }
-    a {
-      color: #007bff;
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+    footer a {
+      color: #61dafb;
       text-decoration: none;
     }
-    a:hover {
+    footer a:hover {
       text-decoration: underline;
+    }
+    /* Media Queries for smaller screens */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav a {
+        margin: 0 0.5rem;
+      }
     }
   </style>
 </head>
@@ -92,45 +237,258 @@
 
 <header>
   <h1>Mohammad H. Rafiei, Ph.D.</h1>
-  <p>ML Engineer | AI Scientist | R&D Leader</p>
-  <p>Atlanta, GA | <a href="mailto:rafiei.ac@gmail.com">rafiei.ac@gmail.com</a> | <a href="https://linkedin.com/in/mhrafiei" target="_blank">LinkedIn</a> | <a href="https://mhrafiei.github.io" target="_blank">Portfolio</a></p>
+  <nav>
+    <!-- Anchor links to each section for quick navigation -->
+    <a href="#about">About</a>
+    <a href="#summary">Summary</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <div class="container">
 
-  <section class="profile">
-    <img src="https://github.com/mhrafiei/mhrafiei.github.io/blob/main/mr1.png?raw=true" alt="Mohammad Rafiei Headshot" />
-    <div class="summary">
-      <h2>Professional Summary</h2>
-      <p>15+ years in ML/AI, including optimization, computer vision, NLP, signal processing, and LLMs. Author of 23+ peer-reviewed papers and creator of 48+ ML/AI GitHub libraries. Inventor of Neural Dynamic Classifier and privacy-preserving MLaaS (MOFHEI). Passionate about building responsible and scalable AI systems.</p>
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <!-- Replace 'headshot.jpg' with your real headshot image -->
+    <img src="https://github.com/mhrafiei/mhrafiei.github.io/blob/main/headshot.png?raw=true" alt="Your Headshot">
+    <div class="about-text">
+      <h2 class="section-title">About Me</h2>
+      <p><strong>Location:</strong> Atlanta, GA | <strong>Phone:</strong> (614) 313-2977</p>
+      <p><strong>Email:</strong> <a href="mailto:rafiei.ac@gmail.com">rafiei.ac@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mhrafiei" target="_blank">mhrafiei</a> | 
+         <strong>Portfolio:</strong> <a href="https://mhrafiei.github.io" target="_blank">mhrafiei.github.io</a></p>
+      <p>US Citizen | 15+ years of experience in developing ML/AI models & programming. 
+         Inventor of the Neural Dynamic Classifier and the MOFHEI privacy-preserving MLaaS framework. 
+         Passionate about turning complex ideas into practical, responsible AI solutions.</p>
     </div>
   </section>
 
-  <section>
-    <h2>Technical Skills</h2>
-    <div class="skills">
-      <div><strong>Languages:</strong> Python, Shell, MATLAB, SQL, HTML, JavaScript</div>
-      <div><strong>Frameworks:</strong> TensorFlow, PyTorch, Keras, HuggingFace, Flask</div>
-      <div><strong>Domains:</strong> CV, NLP, Signal Processing, GANs, Diffusion, EEG/fMRI</div>
-      <div><strong>Tools:</strong> GitHub, Docker, Kubernetes, Colab, AWS, GCP</div>
-      <div><strong>Concepts:</strong> SSL, Optimization, MLOps, Prompt Engineering, HE</div>
+  <!-- PROFESSIONAL SUMMARY SECTION -->
+  <section class="summary" id="summary">
+    <h2 class="section-title">Professional Summary</h2>
+    <p>● <span class="highlight">15 Years</span> building and deploying ML/AI models in Python (TensorFlow, PyTorch).</p>
+    <p>● <span class="highlight">Startup Experience:</span> Founded AI Whittler (2013-2014) focusing on model parameter reduction.</p>
+    <p>● <span class="highlight">R&D Leadership:</span> Led ML/AI projects for 8+ years post-education, with strong track record in obtaining grants & proposals.</p>
+    <p>● <span class="highlight">Publications:</span> 23+ peer-reviewed ML/AI articles across engineering, medicine, and computer science (3,100+ citations).</p>
+    <p>● <span class="highlight">Academic Teaching:</span> Taught grad-level ML/AI at Johns Hopkins University, developed online courses on Self-Supervised Learning & Python.</p>
+    <p>● <span class="highlight">Web Apps & MLOps:</span> 3+ years creating ML-driven web apps with Flask, Docker, Kubernetes, AWS/GCP, and advanced HPC/distributed GPU.</p>
+    <p>● <span class="highlight">NLP & LLM Focus:</span> 3+ years building NLP solutions, including text/audio pipelines, LLM APIs, and prompt engineering best practices.</p>
+  </section>
+
+  <!-- TECHNICAL SKILLS SECTION -->
+  <section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Languages & Frameworks</h3>
+        <ul>
+          <li>Python 3+, MATLAB, Shell Script, SQL</li>
+          <li>TensorFlow, PyTorch, Keras, HuggingFace</li>
+          <li>HTML, CSS, JavaScript, Flask</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>AI & ML Expertise</h3>
+        <ul>
+          <li>SSL, Representation Learning, Contrastive</li>
+          <li>GANs: StyleGAN, Pro-GAN, Diffusion</li>
+          <li>NLP: Transformers, LLMs, Prompt Eng.</li>
+          <li>Adversarial AI, Privacy-Preserving ML</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>DevOps & MLOps</h3>
+        <ul>
+          <li>Docker, Kubernetes, AWS, GCP, Lambdalabs</li>
+          <li>CI/CD, Git/GitHub, HPC, Distributed GPU</li>
+          <li>OpenAI API, Gemini API, Boto3, Gcloud</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Other Specialties</h3>
+        <ul>
+          <li>Computer Vision: R-CNN, SSD, YOLO, OCR</li>
+          <li>Signal Processing: EEG, ECG, fMRI</li>
+          <li>Knowledge Distillation, ML Compression</li>
+          <li>Web Dev: Flask Apps, Remote Deployments</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Featured Projects & Papers</h2>
-    <div class="projects">
-      <a href="https://self-supervised.com" target="_blank"><img src="self-supervised-thumbnail.jpg" alt="Self-Supervised Learning Course" /></a>
-      <a href="https://aiwhittler.com" target="_blank"><img src="ai-whittler-thumbnail.jpg" alt="AI Whittler Startup" /></a>
-      <a href="https://www.rxgames.com" target="_blank"><img src="rxgames-thumbnail.jpg" alt="Stroke/MS Rehab Project" /></a>
-      <a href="https://scholar.google.com" target="_blank"><img src="paper-summary-thumbnail.jpg" alt="Google Scholar Publications" /></a>
+  <!-- EXPERIENCE SECTION -->
+  <section class="experience" id="experience">
+    <h2 class="section-title">Professional Experience</h2>
+    
+    <!-- JHU -->
+    <div class="experience-item">
+      <h3>Instructor & Academic Advisor (Part-Time, Remote)</h3>
+      <p><strong>Johns Hopkins University – Baltimore, MD</strong> | Jan 2021 – Present</p>
+      <ul>
+        <li>Developed “Lecture Maker” GitHub repo for auto-generating 4K video lectures using ElevenLabs & OpenAI APIs.</li>
+        <li>Taught graduate-level ML/AI courses (SSL, CV, OD, NLP, GANs, DevOps, MLOps, HuggingFace, Flask).</li>
+        <li>Served as Academic Advisor: created a Flask webpage to align student research with faculty interests.</li>
+        <li>Built a Flask app allowing students to plan coursework automatically, reducing manual work from 3 hours to seconds.</li>
+      </ul>
+    </div>
+    
+    <!-- AI Whittler Startup -->
+    <div class="experience-item">
+      <h3>Chief Technology Officer (Remote)</h3>
+      <p><strong>AI Whittler Startup – Columbus, OH</strong> | May 2023 – Dec 2024</p>
+      <ul>
+        <li>Founded & served as CTO, creating the “Supervised Whittler” web service for ML parameter reduction.</li>
+        <li>Scaled experiments on Lambdalabs’ distributed GPUs and integrated Paperspace for broader user accessibility.</li>
+        <li>Developed “Manual GPT,” a GitHub repo (Flask, HTML, CSS, JS) for accelerated LLM API interaction via local IPs.</li>
+      </ul>
+    </div>
+    
+    <!-- Georgia State University -->
+    <div class="experience-item">
+      <h3>Postdoctoral Fellow – Computer Science (Full-Time, Hybrid)</h3>
+      <p><strong>Georgia State University – Atlanta, GA</strong> | Jan 2021 – Apr 2023</p>
+      <ul>
+        <li>Created MOFHEI for Privacy-Preserving MLaaS with TensorFlow & Homomorphic Encryption.</li>
+        <li>Developed a SimCLR SSL model for near-wild cognitive estimation using consumer EEG/ECG devices.</li>
+        <li>Drafted proposals for NAS, NSF, DOD, DARPA; contributed to R&D in AI Security, CV, fraud/anomaly detection.</li>
+        <li>Co-authored SSCAE (semantic, syntactic, and context-aware NLP adversarial example generator).</li>
+        <li>Built large-scale StyleGAN & Pro-GAN models on GCP TPUs. Released Self-Supervised Learning course on Udemy.</li>
+      </ul>
+    </div>
+    
+    <!-- Johns Hopkins University (Engineering) -->
+    <div class="experience-item">
+      <h3>Postdoctoral Fellow – Engineering (Full-Time, Hybrid)</h3>
+      <p><strong>Johns Hopkins University – Baltimore, MD</strong> | Aug 2018 – Dec 2020</p>
+      <ul>
+        <li>Invented 1st accelerated discrete dislocation (DD) machine approximation; tackled unbalanced DD data sets.</li>
+        <li>Developed parallel CPU/GPU MATLAB scripts on XSEDE & ARCH for faster DD dynamics simulations.</li>
+        <li>Led ML-accelerated design and characterization of cellular materials (npj publication).</li>
+        <li>Co-organized the 2019 MACH Conference ML Symposium and contributed to NSF & Google grants.</li>
+        <li>Created online Python course on Udemy and a grad-level ML/AI course for Mechanical Engineers.</li>
+      </ul>
+    </div>
+    
+    <!-- Ohio State University -->
+    <div class="experience-item">
+      <h3>Postdoctoral Researcher – Engineering & Medicine (Full-Time, On-Site)</h3>
+      <p><strong>Ohio State University – Columbus, OH</strong> | Feb 2017 – Jul 2018</p>
+      <ul>
+        <li>Invented & published “Neural Dynamic Classifier” – a novel ML algorithm.</li>
+        <li>Developed a Structural Health Index using deep Boltzmann Machine features from vibration data.</li>
+        <li>Investigated high-rise building damage detection using multi-sensor vibration records.</li>
+        <li>Worked on massive unstructured motion-capture data from stroke/MS patients at <a href="http://www.rxgames.com" target="_blank">rxgames.com</a>.</li>
+        <li>Led ML/AI tasks in neuroscience & infrastructure engineering grants (DOE, DOT, NIH, NSF, etc.).</li>
+        <li>Delivered talks on advanced neuroimaging data analytics at ACRM’s Neuroplasticity Webinar.</li>
+      </ul>
     </div>
   </section>
 
+  <!-- PUBLICATIONS SECTION -->
+  <section class="publications" id="publications">
+    <h2 class="section-title">Publications</h2>
+    <p>23+ ML/AI-focused, peer-reviewed journal papers and 2 non-ML/AI papers, collectively cited 3,100+ times.</p>
+    <ul class="pub-list">
+      <li>9 in Civil/Mechanical Engineering</li>
+      <li>5 in Materials Engineering</li>
+      <li>6 in Neuroscience/Medicine</li>
+      <li>5 in Computer Science</li>
+    </ul>
+    <p>View more at <a href="https://scholar.google.com" target="_blank">Google Scholar</a> or <a href="https://mhrafiei.github.io" target="_blank">my portfolio</a>.</p>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="education" id="education">
+    <h2 class="section-title">Education</h2>
+    
+    <div class="education-item">
+      <h3>Ph.D. in Civil Engineering (Focus: ML/AI)</h3>
+      <p><strong>Ohio State University, Dept. of Civil Engineering</strong> | Columbus, OH, USA</p>
+    </div>
+
+    <div class="education-item">
+      <h3>M.Sc. in Civil Engineering (Focus: ML/AI)</h3>
+      <p><strong>Azad University, Science & Research, Dept. of Civil Eng.</strong> | Tehran, Iran</p>
+    </div>
+
+    <div class="education-item">
+      <h3>B.Sc. in Civil Engineering (Focus: General Civil Eng.)</h3>
+      <p><strong>Azad University, Central Tehran, Department of Civil Eng.</strong> | Tehran, Iran</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects" id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="project-grid">
+      <!-- Replace 'https://github.com/mhrafiei/mhrafiei.github.io/blob/main/ndc.png?raw=true', etc. with real images -->
+      <div class="project-item">
+        <img src="project1.jpg" alt="Self-supervised course project">
+        <h3>Neural dynamic Classification</h3>
+        <p>P	Invented & published a novel ML algorithm called Neural Dynamic Classifier.</p>
+        <p><a href="https://self-supervised.com" target="_blank">View Project »</a></p>
+      </div>
+      <div class="project-item">
+        <img src="https://github.com/mhrafiei/mhrafiei.github.io/blob/main/aiw.png" alt="AI Whittler project">
+        <h3>AI Whittler Startup</h3>
+        <p>CTO for AI Whittler, focusing on ML model refinement (Supervised Whittler). 
+           Leveraged distributed GPUs on Lambdalabs & integrated Paperspace for scaling.</p>
+        <p><a href="https://aiwhittler.com/our-story/" target="_blank">View Project »</a></p>
+      </div>
+      <div class="project-item">
+        <img src="https://github.com/mhrafiei/mhrafiei.github.io/blob/main/kin.png" alt="RxGames Project">
+        <h3>Neurorehabilitation ML Pipelines</h3>
+        <p>Processed large motion-capture data from stroke/MS patients for analytics and therapy solutions at RxGames.</p>
+        <p><a href="https://www.rxgames.com" target="_blank">View Project »</a></p>
+      </div>
+      <div class="project-item">
+        <img src="ttps://github.com/mhrafiei/mhrafiei.github.io/blob/main/shi.png" alt="Structural Health Monitoring Project">
+        <h3>Structural Health Monitoring</h3>
+        <p>a Structural Health Index using deep Boltzmann Machine features extracted from ambient vibrations frequency domain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOBBIES SECTION -->
+  <section class="hobbies" id="hobbies">
+    <h2 class="section-title">Hobbies & Interests</h2>
+    <p>I’m a passionate hiker and nature lover, always seeking new trails and scenic viewpoints. 
+       Balancing intense ML/AI research with time outdoors keeps my creativity and problem-solving fresh.</p>
+    <div class="hobbies-grid">
+      <!-- Replace 'https://github.com/mhrafiei/mhrafiei.github.io/blob/main/img03.jpeg?raw=true' / 'hiking2.jpg' etc. with your real hiking pictures -->
+      <div class="hobby-card">
+        <img src="https://github.com/mhrafiei/mhrafiei.github.io/blob/main/img02.jpeg?raw=true" alt="Hiking Photo 1">
+        <p>Exploring mountain trails</p>
+      </div>
+      <div class="hobby-card">
+        <img src="hhttps://github.com/mhrafiei/mhrafiei.github.io/blob/main/img03.jpeg?raw=true" alt="Hiking Photo 2">
+        <p>Taking in scenic vistas</p>
+      </div>
+      <div class="hobby-card">
+        <img src="https://github.com/mhrafiei/mhrafiei.github.io/blob/main/img05.jpeg?raw=true" alt="Hiking Photo 3">
+        <p>Enjoying the tranquility of forests</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:rafiei.ac@gmail.com">rafiei.ac@gmail.com</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mhrafiei" target="_blank">@mhrafiei</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/mhrafiei" target="_blank">@mhrafiei</a></p>
+  </section>
 </div>
 
 <footer>
-  <p>© 2025 Mohammad H. Rafiei. Built with 💻 and 🧠.</p>
+  <p>© 2025 Mohammad H. Rafiei. All Rights Reserved.</p>
+  <p>Built with <span style="color: #e25555;">♥</span> for ML, AI, and the Great Outdoors.</p>
 </footer>
 
 </body>
